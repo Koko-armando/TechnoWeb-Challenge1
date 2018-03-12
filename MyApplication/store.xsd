@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<!-- <xs:schema 
+	targetNamespace="http://www.w3schools.com/storeSchema"
+    elementFormDefault="qualified"
+    xmlns:tns="http://www.w3schools.com/storeSchema"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"> -->
+ <xs:element name="store">
+
+   <xs:complexType>
+
+     <xs:sequence>
+
+       <xs:element minOccurs="0" maxOccurs="unbounded" ref="item"/>
+
+       <xs:element minOccurs="0" maxOccurs="unbounded" ref="warehouse"/>
+
+     </xs:sequence>
+
+   </xs:complexType>
+
+ </xs:element>
+
+ <xs:element name="item">
+
+   <xs:complexType>
+
+     <xs:sequence>
+
+       <xs:element ref="name"/>
+
+       <xs:element ref="price"/>
+
+       <xs:element minOccurs="0" ref="vta"/>
+
+       <xs:element maxOccurs="unbounded" ref="stock"/>
+
+     </xs:sequence>
+
+     <xs:attribute name="category" use="required" type="xs:NCName"/>
+
+     <xs:attribute name="item-id" use="required" type="xs:NCName"/>
+
+   </xs:complexType>
+
+ </xs:element>
+
+ <xs:element name="name" type="xs:string"/>
+
+ <xs:element name="price" type="xs:decimal"/>
+
+ <xs:element name="vta" type="xs:decimal"/>
+
+ <xs:element name="stock">
+
+   <xs:complexType>
+
+     <xs:sequence>
+
+       <xs:element ref="stocklevel"/>
+
+     </xs:sequence>
+
+     <xs:attribute name="warehouse-id" use="required" type="xs:NCName"/>
+
+   </xs:complexType>
+
+ </xs:element>
+
+ <xs:element name="stocklevel" type="xs:integer"/>
+
+ <xs:element name="warehouse">
+
+   <xs:complexType>
+
+     <xs:sequence>
+
+       <xs:element ref="location"/>
+
+       <xs:element ref="country"/>
+
+     </xs:sequence>
+
+     <xs:attribute name="items" use="required"/>
+
+     <xs:attribute name="warehouse-id" use="required" type="xs:NCName"/>
+
+   </xs:complexType>
+
+ </xs:element>
+
+ <xs:element name="location" type="xs:NCName"/>
+
+ <xs:element name="country" type="xs:NCName"/>
+
+</xs:schema>

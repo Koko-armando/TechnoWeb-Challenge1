@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<store
+	xmlns="http://www.w3schools.com/storeSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3schools.com/storeSchema store.xsd">
+    
+  <item item-id="A01" category="furniture">
+    <name>Table Feet</name>
+    <price>16.95</price>
+    <stock warehouse-id="WW1">
+      <stocklevel>50</stocklevel>
+    </stock>
+  </item>
+  <item item-id="A02" category="furniture">
+    <name>Round Table</name>
+    <price>16.10</price>
+    <vta>21.00</vta>
+    <stock warehouse-id="WW1">
+      <stocklevel>30</stocklevel>
+    </stock>
+  </item>
+  <item item-id="A03" category="furniture">
+    <name>Wooden Chair</name>
+    <price>10.23</price>
+    <stock warehouse-id="WW1">
+      <stocklevel>3</stocklevel>
+    </stock>
+  </item>
+  <item item-id="A04" category="furniture">
+    <name>Steel Chair</name>
+    <price>10.12</price>
+    <stock warehouse-id="WW1">
+      <stocklevel>30</stocklevel>
+    </stock>
+  </item>
+  <item item-id="B01" category="furniture">
+    <name>Steel Desk</name>
+    <price>10.12</price>
+    <stock warehouse-id="WW1">
+      <stocklevel>40</stocklevel>
+    </stock>
+    <stock warehouse-id="WW3">
+      <stocklevel>20</stocklevel>
+    </stock>
+  </item>
+  <item item-id="B02" category="furniture">
+    <name>Wooden Desk</name>
+    <price>10.14</price>
+    <stock warehouse-id="WW1">
+      <stocklevel>30</stocklevel>
+    </stock>
+    <stock warehouse-id="WW3">
+      <stocklevel>10</stocklevel>
+    </stock>
+  </item>
+  <item item-id="B03" category="furniture">
+    <name>Wooden Chair</name>
+    <price>8.14</price>
+    <stock warehouse-id="WW1">
+      <stocklevel>20</stocklevel>
+    </stock>
+    <stock warehouse-id="WW3">
+      <stocklevel>10</stocklevel>
+    </stock>
+  </item>
+  <item item-id="C01" category="garden">
+    <name>Lawnmower</name>
+    <price>16.95</price>
+    <stock warehouse-id="WW1">
+      <stocklevel>50</stocklevel>
+    </stock>
+  </item>
+  <item item-id="C02" category="baby">
+    <name>Baby Monitor</name>
+    <price>16.95</price>
+    <stock warehouse-id="WW1">
+      <stocklevel>10</stocklevel>
+    </stock>
+  </item>
+  <warehouse warehouse-id="WW1" items="A01 A02 A03 A04 B01 B02 B03 C01 C02">
+    <location>NY</location>
+    <country>US</country>
+  </warehouse>
+  <warehouse warehouse-id="WW3" items="B01 B02 B03">
+    <location>Brussels</location>
+    <country>BE</country>
+  </warehouse>
+
+</store>
