@@ -3,4 +3,21 @@
   <groupId>MyApplication</groupId>
   <artifactId>MyApplication</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+   <groupId>org.jdom</groupId>
+   <artifactId>jdom</artifactId>
+   <version>1.1</version>
+</dependency>
+<dependency>
+   <groupId>com.sun.msv.datatype.xsd</groupId>
+   <artifactId>xsdlib</artifactId>
+   <version>2010.1</version>
+</dependency>
+<dependency>
+   <groupId>net.sf.saxon</groupId>
+   <artifactId>Saxon-HE</artifactId>
+   <version>9.5.1-2</version>
+</dependency>
+</dependencies>
 </project>
