@@ -1,0 +1,84 @@
+<p:purchaseOrders  xmlns:p="http://www.company.com/purshase" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.company.com/purshase
+       					purchase.xsd">
+
+ <p:order orderDate="2011-02-12">
+    <p:carriageTo country="US">
+        <p:name>Michael Jackson</p:name>
+        <p:street>123 Maple Street</p:street>
+        <p:city>Mill Valley</p:city>
+        <p:state>CA</p:state>
+        <p:zip>90952</p:zip>
+    </p:carriageTo>
+    <p:billTo country="US">
+        <p:name>Bob Dylan</p:name>
+        <p:street>8 Oak Avenue</p:street>
+        <p:city>Old Town</p:city>
+        <p:state>PA</p:state>
+        <p:zip>95819</p:zip>
+    </p:billTo>
+    <p:items>
+        <p:item itemID="C01" warehousecountry="US">
+            <p:productName>Lawnmower</p:productName>
+            <p:quantity>1</p:quantity>
+            <p:carriageDate>2011-03-18</p:carriageDate>
+        </p:item>
+        <p:item itemID="C02" warehousecountry="US">
+            <p:productName>Baby Monitor</p:productName>
+            <p:quantity>1</p:quantity>
+            <p:carriageDate>2011-03-18</p:carriageDate>
+        </p:item>
+    </p:items>
+  </p:order>
+
+  <p:order orderDate="2011-02-11">
+    <p:carriageTo country="BE">
+        <p:name>Henri Michaux</p:name>
+        <p:street>8 rue grandgagnage</p:street>
+        <p:city>Namur</p:city>
+        <p:zip>5000</p:zip>
+    </p:carriageTo>
+    <p:billTo country="BE">
+        <p:name>Henri Michaux</p:name>
+        <p:street>8 rue grandgagnage</p:street>
+        <p:city>Namur</p:city>
+        <p:zip>5000</p:zip>
+    </p:billTo>
+    <p:items>
+        <p:item itemID="B01" warehousecountry="BE">
+            <p:quantity>5</p:quantity>
+            <p:carriageDate>2011-04-10</p:carriageDate>
+        </p:item>
+        <p:item itemID="B02" warehousecountry="BE">
+             <p:quantity>15</p:quantity>
+             <p:carriageDate>2011-04-10</p:carriageDate>
+        </p:item>
+    </p:items>
+   </p:order>
+
+  <p:order orderDate="2011-02-25">
+    <p:carriageTo country="BE">
+        <p:name>Henri Michaux</p:name>
+        <p:street>8 rue grandgagnage</p:street>
+        <p:city>Namur</p:city>
+        <p:zip>5000</p:zip>
+    </p:carriageTo>
+    <p:billTo country="BE">
+        <p:name>Yves Leterme</p:name>
+        <p:street>11 rue de la Loi</p:street>
+        <p:city>Bruxelles</p:city>
+        <p:zip>1000</p:zip>
+    </p:billTo>
+    <p:items>
+        <p:item itemID="B03" warehousecountry="BE">
+            <p:quantity>4</p:quantity>
+            <p:carriageDate>2011-04-10</p:carriageDate>
+        </p:item>
+        <p:item itemID="C01" warehousecountry="BE">
+             <p:quantity>25</p:quantity>
+             <p:carriageDate>2011-04-10</p:carriageDate>
+        </p:item>
+    </p:items>
+   </p:order>
+</p:purchaseOrders>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+           xmlns:p="http://www.company.com/purshase" elementFormDefault="qualified" targetNamespace="http://www.company.com/purshase">
+
+<element name="comment" type="string"/>
+
+<element name="order">
+<complexType>
+  <sequence>
+   <element name="carriageTo" type="p:Address"/>
+   <element name="billTo" type="p:Address"/>
+   <element ref="p:comment" minOccurs="0"/>
+   <element ref="p:items"/>
+  </sequence>
+  <attribute name="orderDate" type="date"/>
+ </complexType>
+ <unique name="uniqueRefOrder">
+ <selector xpath=".//p:carriageTo"/>
+ <field xpath="@country"/>
+</unique>
+<keyref name="refItem" refer="p:uniqueRefOrder">
+	<selector xpath=".//p:item"/>
+ 	<field xpath="@warehousecountry"/>
+</keyref>
+</element>
+
+
+
+<element name="items">
+<complexType>
+  <sequence>
+   <element name="item" minOccurs="0" maxOccurs="unbounded">
+    <complexType>
+     <sequence>
+      <element name="productName" type="string" minOccurs="0"/>
+      <element name="quantity">
+       <simpleType>
+        <restriction base="positiveInteger">
+         <maxExclusive value="100"/>
+        </restriction>
+       </simpleType>
+      </element>
+      <element ref="p:comment"   minOccurs="0"/>
+      <element name="carriageDate" type="date" minOccurs="0"/>
+     </sequence>
+     <attribute name="itemID" type="p:SKU" use="required"/>
+     <attribute name="warehousecountry" type="p:TCOUNTRY" use="required"/>
+    </complexType>
+   </element>
+  </sequence>
+ </complexType>
+
+
+ <unique name="uniqueRef1">
+ <selector xpath=".//p:item"/>
+ <field xpath="@itemID"/>
+</unique>
+
+
+
+</element>
+
+<element name="purchaseOrders">
+ <complexType>
+  <sequence>
+   <element ref="p:order"  minOccurs="0" maxOccurs="unbounded"/>
+  </sequence>
+ </complexType>
+</element>
+
+
+
+
+ <complexType name="Address">
+  <sequence>
+   <element name="name"   type="string"/>
+   <element name="street" type="string"/>
+   <element name="city"   type="string"/>
+   <element name="state"  type="string" minOccurs="0"/>
+   <element name="zip"    type="decimal"/>
+  </sequence>
+  <attribute name="country" type="p:TCOUNTRY" />
+ </complexType>
+
+
+ <simpleType name="SKU">
+  <restriction base="string">
+   <pattern value="[A-Z]{1}\d{2}"/>
+  </restriction>
+ </simpleType>
+  <simpleType name="TCOUNTRY">
+  <restriction base="string">
+   <pattern value="[A-Z]{2}"/>
+  </restriction>
+ </simpleType>
+
+</schema>
