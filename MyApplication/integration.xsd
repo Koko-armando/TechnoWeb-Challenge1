@@ -3,7 +3,7 @@
 		targetNamespace="http://www.example.org/integration" 
 		xmlns:tns="http://www.example.org/integration" elementFormDefault="qualified">
 
-<xs:element name="comment" type="string"/>
+<xs:element name="comment" type="xs:string"/>
 
 <xs:element name="order">
 <xs:complexType>
@@ -31,7 +31,10 @@
    <xs:element name="item" minOccurs="0" maxOccurs="unbounded">
     <xs:complexType>
      <xs:sequence>
-      <xs:element name="productName" type="string" minOccurs="0"/>
+      <xs:element name="productName" type="xs:string" minOccurs="0"/>
+      
+      <xs:element name="price" type="xs:double"></xs:element>
+            
       <xs:element name="quantity">
        <xs:simpleType>
         <xs:restriction base="xs:positiveInteger">
@@ -39,11 +42,14 @@
         </xs:restriction>
        </xs:simpleType>
       </xs:element>
+      
+      <xs:element name="stock" type="tns:warehouse"></xs:element>
+      
       <xs:element ref="tns:comment"   minOccurs="0"/>
-      <xs:element name="carriageDate" type="date" minOccurs="0"/>
+      <xs:element name="carriageDate" type="xs:date" minOccurs="0"/>
      </xs:sequence>
      <xs:attribute name="itemID" type="tns:SKU" use="required"/>
-     <xs:attribute name="warehousecountry" type="tns:TCOUNTRY" use="required"/>
+     <xs:attribute name="category" type="xs:string" use="required"/>
     </xs:complexType>
    </xs:element>
   </xs:sequence>
@@ -67,11 +73,11 @@
 
  <xs:complexType name="Address">
   <xs:sequence>
-   <xs:element name="name"   type="string"/>
-   <xs:element name="street" type="string"/>
-   <xs:element name="city"   type="string"/>
-   <xs:element name="state"  type="string" minOccurs="0"/>
-   <xs:element name="zip"    type="decimal"/>
+   <xs:element name="name"   type="xs:string"/>
+   <xs:element name="street" type="xs:string"/>
+   <xs:element name="city"   type="xs:string"/>
+   <xs:element name="state"  type="xs:string" minOccurs="0"/>
+   <xs:element name="zip"    type="xs:decimal"/>
   </xs:sequence>
   <xs:attribute name="country" type="tns:TCOUNTRY" />
  </xs:complexType>
@@ -87,5 +93,15 @@
    <xs:pattern value="[A-Z]{2}"/>
   </xs:restriction>
  </xs:simpleType>	
+ 
+ <xs:complexType name="warehouse">
+ 	<xs:sequence>
+ 		<xs:element name="stocklevel" type="xs:positiveInteger">
+ 		</xs:element> 		
+ 		<xs:element name="localisation" type="xs:string"></xs:element>
+ 		<xs:element name="country" type="tns:TCOUNTRY"></xs:element>
+ 	</xs:sequence>
+ 	<xs:attribute name="warehouse-id" type="xs:string"></xs:attribute>
+ </xs:complexType>
  	
 </xs:schema>
