@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-		targetNamespace="http://www.example.org/integration" 
+		targetNamespace="http://www.example.org/integration"
+		 
 		xmlns:tns="http://www.example.org/integration" elementFormDefault="qualified">
 
 <xs:element name="comment" type="xs:string"/>
 
 <xs:element name="order">
-<xs:complexType>
+ <xs:complexType>
   <xs:sequence>
    <xs:element name="carriageTo" type="tns:Address"/>
    <xs:element name="billTo" type="tns:Address"/>
@@ -49,7 +50,7 @@
       <xs:element name="carriageDate" type="xs:date" minOccurs="0"/>
      </xs:sequence>
      <xs:attribute name="itemID" type="tns:SKU" use="required"/>
-     <xs:attribute name="category" type="xs:string" use="required"/>
+      <xs:attribute name="category" type="xs:string" use="required"/>
     </xs:complexType>
    </xs:element>
   </xs:sequence>
@@ -62,7 +63,7 @@
 
 </xs:element>
 
-<xs:element name="purchaseOrders">
+<xs:element name="integration">
  <xs:complexType>
   <xs:sequence>
    <xs:element ref="tns:order" minOccurs="0" maxOccurs="unbounded"/>

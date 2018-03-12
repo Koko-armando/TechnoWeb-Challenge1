@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<p:integration xsi:schemaLocation="http://www.example.org/juicersSchema integration.xsd ">
+
+<p:order orderDate="2011-02-12">
+    <p:carriageTo country="US">
+        <p:name>Michael Jackson</p:name>
+        <p:street>123 Maple Street</p:street>
+        <p:city>Mill Valley</p:city>
+        <p:state>CA</p:state>
+        <p:zip>90952</p:zip>
+    </p:carriageTo>
+    <p:billTo country="US">
+        <p:name>Bob Dylan</p:name>
+        <p:street>8 Oak Avenue</p:street>
+        <p:city>Old Town</p:city>
+        <p:state>PA</p:state>
+        <p:zip>95819</p:zip>
+    </p:billTo>
+    <p:items>
+        <p:item itemID="C01" category="furniture">
+            <p:productName>Lawnmower</p:productName>
+            <p:price>16.95</p:price>
+            <p:quantity>1</p:quantity>
+            <p:stock warehouse-id="WW1">
+				<p:stocklevel>40</p:stocklevel>
+				<p:location>NY</p:location>
+				<p:country>US</p:country>
+			</p:stock>
+            <p:carriageDate>2011-03-18</p:carriageDate>
+        </p:item>
+    </p:items>
+  </p:order>	
+</p:integration>
