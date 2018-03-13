@@ -16,7 +16,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/jessi/Downloads/SaxonHE9-8-0-8J/saxon9he.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jessi/Downloads/jdom-2.0.6/jdom-2.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ng-ar/.m2/repository/net/sf/saxon/Saxon-HE/9.5.1-2/Saxon-HE-9.5.1-2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ng-ar/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -37,8 +37,7 @@ public void setWarehouse_country(String warehouse_country) {
 }
 
 public boolean compareItem(Item item) {
-	   return  this.getName().equals(item.getName())
-			   && this.getItemid().equals(item.getItemid())&& this.getWarehouse_country().equals(item.getWarehouse_country());
+	   return  this.getItemid().equals(item.getItemid());
 	  
 	}
 
